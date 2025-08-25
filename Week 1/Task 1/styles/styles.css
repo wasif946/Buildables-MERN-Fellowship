@@ -1,0 +1,187 @@
+/* General Body and Main Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333; /* Darker color for better contrast */
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Skip-to-content Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    text-decoration: none;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #007BFF;
+}
+
+/* No-script message styling */
+.noscript-message {
+    padding: 10px;
+    background-color: #ffc107;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    outline-offset: 2px;
+}
+
+header nav a:hover {
+    color: #ddd;
+}
+
+/* Sections */
+section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #222; /* Improved color contrast for headings */
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+}
+
+/* Portfolio Projects */
+.project {
+    margin-bottom: 15px;
+    border-left: 5px solid #007BFF;
+    padding-left: 15px;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Contact Form */
+/* Language Switcher Styling */
+.lang-switcher {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.lang-btn {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.lang-btn:hover {
+    background: #ddd;
+}
+
+.lang-btn.active {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
+
+#contact form .form-group {
+    margin-bottom: 15px;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+    outline: 2px solid #007BFF;
+    border-color: #007BFF;
+}
+
+#contact form button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+#contact form button:hover {
+    background: #555;
+}
+
+#contact form button:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+/* Small screen responsiveness */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav li {
+        margin: 5px 0;
+    }
+}

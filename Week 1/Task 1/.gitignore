@@ -1,0 +1,17 @@
+# Git ignore file for web projects
+
+# Ignore node modules and build artifacts
+/node_modules
+/dist
+/build
+/out
+
+# Ignore editor-specific files
+.vscode/
+.DS_Store
+*.swp
+*.bak
+
+# Ignore system files
+.env
+.idea

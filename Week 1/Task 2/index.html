@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Project</title>
+    <!-- Link the main stylesheet for screen views -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link the specific stylesheet for print media -->
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown-link">
+                    <a href="#" class="dropdown-toggle">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#project-1">Project 1</a></li>
+                        <li><a href="#project-2">Project 2</a></li>
+                        <li><a href="#project-3">Project 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="grid-container">
+            <section id="main-content">
+                <article class="card">
+                    <h2>Welcome to the Site</h2>
+                    <p>This page is a demonstration of responsive web design. The layout will adapt to fit the screen size of your device, whether it's a mobile phone, tablet, or desktop. It also includes a special style for printing.</p>
+                </article>
+
+                <article class="card">
+                    <h2>About Graceful Degradation</h2>
+                    <p>Graceful degradation means the content is still usable if the browser doesn't support the latest CSS features or if CSS is disabled entirely. This page is built with that principle in mind, using a mobile-first approach for core readability.</p>
+                </article>
+
+                <article class="card">
+                    <h2>Feature Detection with @supports</h2>
+                    <p>The `@supports` rule is used to check for browser feature support before applying a specific style. For example, the `grid-template-columns` property is only applied if the browser supports CSS Grid. This ensures that the layout will not break on older browsers.</p>
+                </article>
+            </section>
+            
+            <aside id="sidebar" class="card">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#">Article 1</a></li>
+                    <li><a href="#">Article 2</a></li>
+                    <li><a href="#">Article 3</a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Responsive Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

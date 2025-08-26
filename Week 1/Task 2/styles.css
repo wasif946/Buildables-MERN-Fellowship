@@ -1,0 +1,141 @@
+/*
+   1. Base Styles (Graceful Degradation)
+   These styles ensure the page is readable and usable even without advanced CSS features.
+   This is the "mobile-first" approach.
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Flexbox for the main navigation */
+.main-nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+/* 2. CSS-Only Accessible Dropdown Nav */
+.dropdown-link {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #004494;
+    min-width: 120px;
+    z-index: 10;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1rem;
+}
+
+/* Show the dropdown when the parent is focused or hovered */
+.dropdown-link:hover .dropdown-menu,
+.dropdown-link:focus-within .dropdown-menu {
+    display: block;
+}
+
+/* 3. CSS @supports for Feature Detection */
+@supports (display: grid) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+}
+
+/* 4. Media Queries for 3 Breakpoints (Responsive Design) */
+
+/* Tablet Breakpoint: 600px and up */
+@media (min-width: 600px) {
+    .main-nav > ul {
+        justify-content: flex-start;
+    }
+    .grid-container {
+        grid-template-columns: 1fr 1fr; /* Two columns for tablets */
+    }
+}
+
+/* Desktop Breakpoint: 900px and up */
+@media (min-width: 900px) {
+    body {
+        padding: 2rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .grid-container {
+        grid-template-columns: 2fr 1fr; /* Main content and sidebar */
+    }
+    
+    #main-content {
+        grid-column: 1 / 2;
+    }
+    
+    #sidebar {
+        grid-column: 2 / 3;
+    }
+
+    .main-nav > ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+}

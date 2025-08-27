@@ -1,0 +1,43 @@
+/*
+   This stylesheet is loaded only when the document is being printed.
+   It ensures the page is clean, ink-friendly, and readable.
+*/
+@media print {
+    body {
+        font-family: "Times New Roman", Times, serif;
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+        padding: 0;
+    }
+
+    /* Hide elements that are not necessary for a printed page */
+    header, nav, footer, .card:last-of-type {
+        display: none;
+    }
+
+    /* Ensure all colors are black to save ink */
+    h1, h2, h3 {
+        color: black;
+    }
+
+    /* Reset margins and padding for printing */
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Add the URL next to links for reference in print */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+    }
+
+    /* Prevent page breaks inside cards for better layout */
+    .card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+}

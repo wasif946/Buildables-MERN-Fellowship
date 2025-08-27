@@ -1,0 +1,185 @@
+/*
+   1. CSS Variables for Theming
+   Define a set of variables for light and dark themes at the :root level.
+*/
+:root {
+    --color-primary: #0056b3;
+    --color-secondary: #004494;
+    --color-background: #f4f4f4;
+    --color-card-background: #ffffff;
+    --color-text: #333333;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme overrides. These variables are applied to the body
+   when the 'dark-theme' class is present. */
+body.dark-theme {
+    --color-primary: #52a7ff;
+    --color-secondary: #65b3ff;
+    --color-background: #1a1a1a;
+    --color-card-background: #2a2a2a;
+    --color-text: #e0e0e0;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-box-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/*
+   2. Base Styles Refactored with Variables and BEM
+   The original styles are now using the new CSS variables.
+   Class names have been updated to follow the BEM (Block-Element-Modifier) convention.
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-card-background);
+    padding: 1rem;
+    text-align: center;
+}
+
+.main-nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-nav__link {
+    color: var(--color-card-background);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.card {
+    background: var(--color-card-background);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--color-box-shadow);
+}
+
+.card__heading {
+    color: var(--color-primary);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-secondary);
+    min-width: 120px;
+    z-index: 10;
+}
+
+.dropdown__menu-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dropdown__menu-link {
+    padding: 0.75rem 1rem;
+    color: var(--color-card-background);
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown when the parent is focused or hovered */
+.dropdown:hover .dropdown__menu,
+.dropdown:focus-within .dropdown__menu {
+    display: block;
+}
+
+/*
+   3. Utility Classes
+   Simple, reusable classes for specific purposes.
+*/
+.u-text-center {
+    text-align: center;
+}
+
+.u-margin-top-sm {
+    margin-top: 1rem;
+}
+
+.u-margin-bottom-sm {
+    margin-bottom: 1rem;
+}
+
+
+/* 4. CSS @supports for Feature Detection */
+@supports (display: grid) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 5. Media Queries for 3 Breakpoints */
+
+/* Tablet Breakpoint: 600px and up */
+@media (min-width: 600px) {
+    .main-nav__list {
+        justify-content: flex-start;
+    }
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop Breakpoint: 900px and up */
+@media (min-width: 900px) {
+    body {
+        padding: 2rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .main-content {
+        grid-column: 1 / 2;
+    }
+    
+    .sidebar {
+        grid-column: 2 / 3;
+    }
+
+    .main-nav__list {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        padding: 2rem;
+    }
+}

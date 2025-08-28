@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Portfolio</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Skip-to-content link for keyboard users. It's visually hidden until it gets keyboard focus. -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- A message for users who have JavaScript disabled -->
+    <noscript>
+        <p class="noscript-message">This site works best with JavaScript enabled, but basic functionality is available without it. Some interactive features may not be available.</p>
+    </noscript>
+
+    <!-- Header section with navigation. Has a landmark role of "banner" for accessibility. -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main menu">
+            <h1 class="logo">My Portfolio</h1>
+            <ul class="main-nav__list">
+                <li><a href="#about" class="main-nav__link">About</a></li>
+                <li><a href="#portfolio" class="main-nav__link">Portfolio</a></li>
+                <li><a href="#contact" class="main-nav__link">Contact</a></li>
+                 <!-- Theme toggle button for Task 3 -->
+                <li>
+                    <button id="theme-toggle" class="main-nav__link">Toggle Theme</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content of the page. Has a landmark role of "main". -->
+    <main id="main-content" role="main">
+
+        <!-- About section -->
+        <section id="about">
+            <h2 class="section__heading">About Me</h2>
+            <p>Welcome to my portfolio! I am a passionate web developer with a strong focus on creating accessible and user-friendly websites. I am dedicated to building web experiences that are inclusive for everyone, regardless of ability or device.</p>
+        </section>
+
+        <!-- Portfolio section with example projects -->
+        <section id="portfolio">
+            <h2 class="section__heading">My Work</h2>
+            <!-- Filter input for Task 4 -->
+            <div class="filter-controls">
+                <label for="filter-input" class="filter-controls__label">Search Projects:</label>
+                <input type="text" id="filter-input" class="filter-controls__input" placeholder="Type to filter...">
+            </div>
+            <div class="project-list">
+                <div class="project" data-project-id="1">
+                    <h3><a href="#" aria-label="Learn more about Project Alpha">Project Alpha</a></h3>
+                    <p>An accessible website built with semantic HTML and CSS, showcasing a clean, responsive layout. It features high contrast for readability and logical heading structures for screen readers.</p>
+                    <!-- Inline SVG to guarantee the image loads every time. -->
+                    <svg width="100%" height="auto" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A clean, minimalist website layout with a hero section and content blocks.">
+                      <rect width="100%" height="100%" fill="#333333" />
+                      <rect x="25" y="25" width="350" height="200" rx="10" ry="10" fill="#f4f4f4" />
+                      <rect x="50" y="50" width="300" height="25" fill="#888888" rx="5" ry="5"/>
+                      <rect x="50" y="90" width="100" height="10" fill="#cccccc" rx="3" ry="3"/>
+                      <rect x="50" y="110" width="200" height="10" fill="#bbbbbb" rx="3" ry="3"/>
+                      <rect x="50" y="130" width="250" height="10" fill="#bbbbbb" rx="3" ry="3"/>
+                      <rect x="50" y="160" width="80" height="10" fill="#aaaaaa" rx="3" ry="3"/>
+                      <rect x="140" y="160" width="80" height="10" fill="#aaaaaa" rx="3" ry="3"/>
+                      <rect x="230" y="160" width="80" height="10" fill="#aaaaaa" rx="3" ry="3"/>
+                      <rect x="50" y="190" width="300" height="10" fill="#bbbbbb" rx="3" ry="3"/>
+                      <rect x="50" y="210" width="250" height="10" fill="#bbbbbb" rx="3" ry="3"/>
+                    </svg>
+                </div>
+                <div class="project" data-project-id="2">
+                    <h3><a href="#" aria-label="Learn more about Project Beta">Project Beta</a></h3>
+                    <p>A web application with a focus on keyboard navigation and ARIA attributes to enhance usability for all users. The form elements were carefully designed to be fully screen-reader compatible.</p>
+                    <!-- Inline SVG to guarantee the image loads every time. -->
+                    <svg width="100%" height="auto" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A modern user interface with a sleek design.">
+                      <rect width="100%" height="100%" fill="#555555"/>
+                      <rect x="25" y="25" width="350" height="200" rx="10" ry="10" fill="#f4f4f4"/>
+                      <rect x="50" y="50" width="300" height="15" rx="5" ry="5" fill="#333333"/>
+                      <rect x="50" y="75" width="200" height="10" rx="3" ry="3" fill="#666666"/>
+                      <rect x="50" y="100" width="180" height="10" rx="3" ry="3" fill="#666666"/>
+                      <rect x="50" y="125" width="280" height="10" rx="3" ry="3" fill="#666666"/>
+                      <circle cx="330" cy="57.5" r="5" fill="#e74c3c"/>
+                      <circle cx="345" cy="57.5" r="5" fill="#f1c40f"/>
+                      <circle cx="360" cy="57.5" r="5" fill="#2ecc71"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact form section. The form is fully accessible and includes client-side validation. -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <!-- Language switcher for the form labels -->
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en">ENG</button>
+                <button class="lang-btn" data-lang="es">ESP</button>
+                <button class="lang-btn" data-lang="fr">FRA</button>
+            </div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name" data-label="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-label="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-label="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer section with copyright information. Has a landmark role of "contentinfo". -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Link the main modular JS file for Task 4 -->
+    <script src="js/app.js" type="module"></script>
+
+</body>
+</html>

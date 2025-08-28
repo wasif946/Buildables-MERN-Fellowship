@@ -1,0 +1,23 @@
+{
+  "name": "responsive-web-page-project",
+  "version": "1.0.0",
+  "description": "A responsive web page project demonstrating modular JavaScript and testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "responsive-design",
+    "javascript",
+    "jest",
+    "modules"
+  ],
+  "author": "Wasif Waheed",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  }
+}

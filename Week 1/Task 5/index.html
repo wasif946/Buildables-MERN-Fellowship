@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Data Fetcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="h-full antialiased light-theme">
+
+    <a href="#main-content" class="absolute -top-14 left-1/2 -translate-x-1/2 p-3 text-white bg-blue-600 focus:top-0 transition-all duration-300 z-50">Skip to main content</a>
+
+    <div class="min-h-full flex flex-col items-center justify-center p-4 sm:p-6">
+        <div class="relative w-full max-w-4xl mx-auto flex flex-col gap-8 rounded-xl p-8 sm:p-12 light-theme">
+            
+            <!-- Header and Theme Toggle -->
+            <header class="flex justify-between items-center w-full">
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Vite Project</h1>
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors">
+                    <span id="theme-icon" role="img" aria-label="Toggle dark mode">🌙</span>
+                </button>
+            </header>
+            
+            <!-- Main Content Grid -->
+            <main id="main-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+
+                <!-- Data Fetching Card -->
+                <section class="card bg-white p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out">
+                    <h2 class="text-2xl font-semibold mb-4">API Data Fetching</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Click the button to fetch data from a mock API. Watch the console to see the retry logic and caching strategy in action.</p>
+                    <button id="fetch-data-btn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Fetch Data
+                    </button>
+                    <div id="data-output" class="mt-6 p-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-sm overflow-auto max-h-64 border border-gray-200 dark:border-gray-700">
+                        <span class="text-gray-500 dark:text-gray-400">No data loaded yet.</span>
+                    </div>
+                </section>
+                
+                <!-- Contact Form Card -->
+                <section class="card bg-white p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out">
+                    <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Send Message
+                        </button>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+</body>
+</html>

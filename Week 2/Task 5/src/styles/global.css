@@ -1,0 +1,32 @@
+/* src/styles/global.css */
+
+/* Apply CSS Variables (tokens) */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Default link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* Button reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Smooth transitions for theme tokens */
+* {
+  transition: background-color 0.2s, color 0.2s;
+}

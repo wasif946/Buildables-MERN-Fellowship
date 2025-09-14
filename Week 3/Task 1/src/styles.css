@@ -1,0 +1,51 @@
+/* Root layout header */
+header {
+  background: #20232a;
+  color: #2313baff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: #61dafb;
+}
+
+main {
+  padding: 2rem;
+  min-height: calc(100vh - 70px);
+  background: #f5f6fa;
+}
+
+/* Users layout */
+.users-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.users-list {
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.users-list li {
+  margin: 0.5rem 0;
+}
+
+.user-detail {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+}

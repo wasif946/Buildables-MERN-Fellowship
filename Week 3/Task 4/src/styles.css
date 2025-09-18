@@ -1,0 +1,49 @@
+/*
+  These are the core directives for Tailwind CSS.
+  They are absolutely essential to enable the classes
+  used in your form component (e.g., bg-white, shadow-xl, rounded-xl).
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your existing custom CSS is now placed below the Tailwind directives */
+
+/* Navbar */
+nav {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--nav-text);
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid var(--text-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+nav button:hover {
+  opacity: 0.8;
+}
+
+/* Data Cards (optional) */
+.data-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

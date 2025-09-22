@@ -1,0 +1,35 @@
+/* These are the core directives for Tailwind CSS. 
+  They are required to generate all the utility classes (like rounded-xl, shadow-xl, flex) 
+  that are used in your MultiStepForm component. 
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Your existing global styles and theme variables are kept below.
+*/
+
+/* Base theme (light mode default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg: #f0f0f0;
+  --nav-text: #000000;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --nav-bg: #1f1f1f;
+  --nav-text: #ffffff;
+}
+
+/* Apply variables to the whole app */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}

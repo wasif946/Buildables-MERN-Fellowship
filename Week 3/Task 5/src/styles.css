@@ -1,0 +1,57 @@
+/* ===== index.css ===== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom component classes */
+@layer components {
+  .nav-link {
+    @apply text-lg font-medium px-4 py-2 rounded-md transition-all duration-200;
+    @apply hover:text-blue-400 hover:bg-gray-700;
+  }
+  
+  .page-container {
+    @apply min-h-screen flex justify-center items-center bg-gray-100;
+  }
+  
+  .page-title {
+    @apply text-4xl font-bold text-gray-800;
+  }
+}
+
+/* ===== styles.css (if you have a separate styles.css file) ===== */
+/* You can either delete this file or keep it empty if you're using Tailwind */
+/* OR if you want to keep some custom styles: */
+
+.custom-spacing {
+  margin-right: 1.5rem; /* Fallback for space-x-6 */
+}
+
+.custom-spacing:last-child {
+  margin-right: 0;
+}
+
+/* Ensure navigation items are properly spaced */
+nav ul li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
